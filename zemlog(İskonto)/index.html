@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Zemlog(İskonto)</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@600&family=Syne:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<script type="text/javascript">
+function hesapla() {
+  var fiyat = document.getElementById("fiyat").value;
+  var yuzde = document.getElementById("yuzde").value;
+  var radio_indirimli = document.getElementById("radio-indirimli");
+  var radio_indirimsiz = document.getElementById("radio-indirimsiz");
+  var para_birimi = document.getElementById("para-birimleri").value;
+  var a = "İndirimli Fiyat";
+  var b = "İndirimsiz Fiyat";
+
+
+document.getElementById("fiyat-uyari").innerHTML="";
+document.getElementById("yuzde-uyari").innerHTML="";
+
+
+if(document.getElementById("fiyat").value=="")
+{document.getElementById("fiyat-uyari").innerHTML="Lütfen fiyat giriniz";
+document.getElementById("fiyat-uyari").style.color="#ff0000";
+document.getElementById("fiyat-uyari").style.fontSize="12px";
+document.getElementById("fiyat-uyari").style.fontFamily="Poppins', sans-serif;";}
+
+if(document.getElementById("yuzde").value=="")
+{document.getElementById("yuzde-uyari").innerHTML="Lütfen yüzde giriniz";
+document.getElementById("yuzde-uyari").style.color="#ff0000";
+document.getElementById("yuzde-uyari").style.fontSize="12px";
+document.getElementById("yuzde-uyari").style.fontFamily="Poppins', sans-serif;";}
+
+
+else{
+		
+document.getElementById("telefon-yazi2-sol").innerHTML="Ürün Fiyatı";
+document.getElementById("telefon-yazi2-sag").innerHTML=para_birimi+fiyat;
+
+document.getElementById("telefon-yazi3-sol").innerHTML="İndirim Oranı";
+document.getElementById("telefon-yazi3-sag").innerHTML="%"+yuzde;
+
+document.getElementById("telefon-cizgi").innerHTML = '<hr style="border:1px solid #A4A4A4; width:208px;">';
+
+
+if(radio_indirimli.checked){
+    
+  var indirimli_sonuc= fiyat - (fiyat * yuzde / 100);
+  document.getElementById("telefon-yazi4-sol").innerHTML=a;
+  document.getElementById("telefon-yazi4-sag").innerHTML=para_birimi+indirimli_sonuc;}
+
+ 
+	
+if(radio_indirimsiz.checked){
+  var adim1=(fiyat*yuzde);
+  var adim2=(100-yuzde);
+  var indirimsiz_sonuc=(adim1/adim2);
+  
+  document.getElementById("telefon-yazi4-sol").innerHTML=b;
+  document.getElementById("telefon-yazi4-sag").innerHTML=para_birimi+indirimsiz_sonuc.toFixed(2);}
+
+}
+
+}
+
+function temizle(){
+
+document.getElementById("telefon-yazi2-sol").innerHTML="";	
+document.getElementById("telefon-yazi2-sag").innerHTML="";
+
+document.getElementById("telefon-yazi3-sol").innerHTML="";
+document.getElementById("telefon-yazi3-sag").innerHTML="";
+
+document.getElementById("telefon-yazi4-sol").innerHTML="";
+document.getElementById("telefon-yazi4-sag").innerHTML="";
+
+document.getElementById("telefon-cizgi").innerHTML="";
+
+	
+	}
+
+</script>
+<div class="ust">
+ <div class="ust-baslik">İskonto Hesaplama</div>
+ <div class="ust-yazi">Katma değer vergisini en kolay şekilde hesaplayabilmeniz için aşağıdaki KDV hesaplama aracını kullanabilirsiniz.</div>
+</div>
+
+<div class="orta">
+ <div class="orta-sablon">
+  <div class="orta-sablon-sol">
+  <center>
+   <form>
+   <table class="table">
+   
+   <tr><td><input type="radio" id="radio-indirimli" name="iskonto" checked><label id="label">İskonto Hesaplama (İndirimli)</label></td></tr>
+   <tr><td><input type="radio" id="radio-indirimsiz"  name="iskonto"><label id="label">İskonto Hesaplama (İndirimsiz)</label></td></tr>
+   
+   <tr><td height="20"></td></tr>
+   
+   <tr><td height="24" class="row-1">Para Birimi</td></tr>
+   <tr><td height="52">
+   <select class="row-2" id="para-birimleri">
+   <option value="₺"><b>TL</b> - Türk Lirası</option>
+   <option value="$"><b>USD</b> - Amerikan Doları</option>
+   <option value="€"><b>EU</b> - Euro</option>
+   </select>
+   </td></tr>
+   <tr><td height="12"><span id="sayi-uyari"></span></td></tr>
+   
+   <tr><td height="10"></td></tr>
+   
+   <tr><td height="24" class="row-1">Ürün Fiyatı</td></tr>
+   <tr><td height="52"><input type="number" id="fiyat" class="row-2"></td></tr>
+   <tr><td height="12"><span id="fiyat-uyari"></span></td></tr>
+   
+   <tr><td height="10"></td></tr>
+   
+   <tr><td height="24" class="row-1">İndirim Oranı (%)</td></tr>
+   <tr><td height="52"><input type="number" id="yuzde" class="row-2"></td></tr>
+   <tr><td height="12"><span id="yuzde-uyari"></span></td></tr>
+   
+   <tr><td height="10"></td></tr>
+   
+   <tr><td height="52"><input type="button" class="button-1" value="Hesapla" onClick="hesapla()"></td></tr>
+   <tr><td height="52"><button id="button-2" onClick="temizle()"><span class="trash-icon">&#128465;</span> Temizle</button></td></tr>
+   <!--
+   <input type="button" id="button-2" value="Temizle" onClick="temizle()">
+   -->
+   </table>
+   </form>
+   </center>
+  </div>
+  <div class="orta-sablon-sag">
+   <div class="telefon" id="telefon">
+    <div class="telefon-yazi">
+    
+     <p id="telefon-baslik">Hesaplama Sonucu</p><br/>
+     
+     <p id="telefon-yazi1">Sonucu görmek için tutar girip <b>"Hesapla"</b> butonuna basın</p><br/>
+     
+     <div class="telefon-yazi2">
+      <p id="telefon-yazi2-sol"></p><p id="telefon-yazi2-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-yazi3">
+      <p id="telefon-yazi3-sol"></p><p id="telefon-yazi3-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-cizgi" id="telefon-cizgi"></div>
+     
+     <div class="telefon-yazi4">
+      <p id="telefon-yazi4-sol"></p><p id="telefon-yazi4-sag"></p>
+     </div>
+    
+    </div>
+   </div>
+  </div>
+  
+  
+ </div>
+</div>
+
+</body>
+</html>

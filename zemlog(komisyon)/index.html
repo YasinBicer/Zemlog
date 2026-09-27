@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Zemlog(Komisyon)</title>
+<link rel="stylesheet" href="../zemlog(komisyon)/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript">
+function expose(radio)
+{
+	var aliciya_ait=document.getElementById("radio-alici");
+	var saticiya_ait=document.getElementById("radio-satici");
+	var gizli_1=document.getElementById("hidden-1");
+	var gizli_2=document.getElementById("hidden-2");
+	var gizli_2_uyari=document.getElementById("hidden-2-uyari");
+
+	
+	if(saticiya_ait.checked)
+	{ gizli_1.style.display="block";
+	  gizli_2.style.display="block";
+	  gizli_2_uyari.style.display="block";
+	  }
+	else 
+	{ gizli_1.style.display="none";
+	  gizli_2.style.display="none";
+	  gizli_2_uyari.style.display="none";} 
+	  
+}	  
+	
+function expose_2(radio)
+{	
+	var diger_radio=document.getElementById("radio-4");
+	var gizli_diger=document.getElementById("hidden-diger");
+	var gizli_diger_uyari=document.getElementById("hidden-diger-uyari");
+	
+	if(diger_radio.checked)
+	{gizli_diger.style.display="block";
+	 gizli_diger_uyari.style.display="block";}
+	else
+	{gizli_diger.style.display="none";
+	 gizli_diger_uyari.style.display="none";}
+}
+
+
+function komisyon()
+{   
+	var komisyon_deger=document.getElementById("komisyon").value;
+    document.getElementById("row-3-2").innerHTML="%"+komisyon_deger;
+	
+}
+
+
+function hesapla()
+{
+	
+	if(document.getElementById("komisyon").value=="")
+	{document.getElementById("komisyon-uyari").innerHTML="Lütfen komisyon giriniz";
+	 document.getElementById("komisyon-uyari").style.color="#ff0000";
+	 document.getElementById("komisyon-uyari").style.fontSize="12px";
+	 document.getElementById("komisyon-uyari").style.fontFamily="Poppins', sans-serif;";
+	}
+	
+	
+	if(document.getElementById("input-alis-gizli").value=="")
+	{document.getElementById("alis-fiyat-uyari").innerHTML="Lütfen fiyat giriniz";
+	 document.getElementById("alis-fiyat-uyari").style.color="#ff0000";
+	 document.getElementById("alis-fiyat-uyari").style.fontSize="12px";
+	 document.getElementById("alis-fiyat-uyari").style.fontFamily="Poppins', sans-serif;";
+	}
+	
+	if(document.getElementById("satis-fiyat").value=="")
+	{document.getElementById("satis-fiyat-uyari").innerHTML="Lütfen fiyat giriniz";
+	 document.getElementById("satis-fiyat-uyari").style.color="#ff0000";
+	 document.getElementById("satis-fiyat-uyari").style.fontSize="12px";
+	 document.getElementById("satis-fiyat-uyari").style.fontFamily="Poppins', sans-serif;";
+	}
+	
+	if(document.getElementById("kdv-diger").value=="")
+	{document.getElementById("kdv-diger-uyari").innerHTML="Lütfen KDV giriniz";
+	 document.getElementById("kdv-diger-uyari").style.color="#ff0000";
+	 document.getElementById("kdv-diger-uyari").style.fontSize="12px";
+	 document.getElementById("kdv-diger-uyari").style.fontFamily="Poppins', sans-serif;";
+	}
+	
+	if(document.getElementById("input-kargo-gizli").value=="")
+	{document.getElementById("kargo-uyari").innerHTML="Lütfen fiyat giriniz";
+	 document.getElementById("kargo-uyari").style.color="#ff0000";
+	 document.getElementById("kargo-uyari").style.fontSize="12px";
+	 document.getElementById("kargo-uyari").style.fontFamily="Poppins', sans-serif;";
+	}
+	
+	else{
+	var komisyon_deger=document.getElementById("komisyon").value;
+	var alis_deger=document.getElementById("input-alis-gizli").value;
+	var satis_deger=document.getElementById("satis-fiyat").value;
+	
+	var kdv_1=document.getElementById("radio-1").value;
+	var kdv_2=document.getElementById("radio-2").value;
+	var kdv_3=document.getElementById("radio-3").value;
+	var kdv_deger=document.getElementById("kdv-diger").value;
+	
+	var kargo_deger=document.getElementById("input-kargo-gizli").value;
+	
+	
+	document.getElementById("telefon-yazi2-sol").innerHTML="Yüzde Sayısı";
+	document.getElementById("telefon-yazi2-sag").innerHTML="₺"+sayi;
+
+	document.getElementById("telefon-yazi3-sol").innerHTML="Yüzde Değeri";
+	document.getElementById("telefon-yazi3-sag").innerHTML="%"+yuzde;
+
+	document.getElementById("telefon-cizgi").innerHTML = '<hr style="border:1px solid #A4A4A4; width:208px;">';
+
+	document.getElementById("telefon-yazi4-sol").innerHTML="Sonuç";
+	document.getElementById("telefon-yazi4-sag").innerHTML="₺"+sonuc;}
+		
+		
+		
+}
+
+
+</script>
+</head>
+
+<body>
+
+<div class="ust">
+ <div class="ust-baslik">Komisyon Hesaplama Aracı</div>
+ <div class="ust-yazi">Etsy ürün komisyonlarını en doğru ve kolay şekilde hesaplamak için aşağıdaki Trendyol komisyon hesaplama aracını kullanabilirsiniz.</div>
+</div>
+
+<div class="orta">
+ <div class="orta-sablon">
+  <div class="orta-sablon-sol">
+  <center>
+   <form>
+   <table class="table">
+   <tr><td height="24" id="row-1">Ürün Kategorisi / Komisyon</td></tr>
+   <tr><td height="52"><input type="number" id="komisyon" class="row-2" onchange="komisyon()"></td></tr>
+   <tr><td height="35">
+   <div class="row-3">
+   <p id="row-3-1">Komisyon oranı</p><p id="row-3-2"></p>
+   </div></td></tr>	
+   <tr><td height="12"><span id="komisyon-uyari"></span></td></tr>
+   
+   
+   
+   <tr><td height="24" id="row-1">Alış Fiyatı</td></tr>
+   <tr><td height="52"><div class="custom-input">
+   <input type="number" id="input-alis-gizli" style="float:left;">
+   <input type="checkbox" id="check" style="float:left; margin:20px 0 0 0; display:none;">
+   <label for="check" class="on-off"></label>
+   <label id="label-7">KDV Hariç</label>
+   </div></td></tr>
+   <tr><td height="12"><span id="alis-fiyat-uyari"></span></td></tr>
+   
+  
+   
+   <tr><td height="24" id="row-1">Satış Fiyatı(KDV Dahil)</td></tr>
+   <tr><td height="52"><input type="text" id="satis-fiyat" class="row-2"></td></tr>
+   <tr><td height="12"><span id="satis-fiyat-uyari"></span></td></tr>
+   
+   <tr><td height="10"></td></tr>
+   
+   <tr><td height="24" id="row-1">KDV Miktarı</td></tr>
+   <tr><td height="52">
+   <input type="radio" id="radio-1" name="komisyon" onClick="expose_2(this)" value="20" checked><label id="label-1" for="radio-1">%20</label>
+   <input type="radio" id="radio-2" name="komisyon" onClick="expose_2(this)" value="10"><label id="label-2" for="radio-2">%10</label>
+   <input type="radio" id="radio-3" name="komisyon" onClick="expose_2(this)" value="1"><label id="label-3" for="radio-3">%1</label>
+   <input type="radio" id="radio-4" name="komisyon" onClick="expose_2(this)"><label id="label-4" for="radio-4">Diğer</label>
+   </td></tr>
+   
+   <tr><td height="5"></td></tr>
+   
+   <tr id="hidden-diger" style="display:none;"><td height="52"><input type="number" id="kdv-diger" class="row-2_1"></td></tr>
+   <tr id="hidden-diger-uyari" style="display:none;"><td height="12"><span id="kdv-diger-uyari"></span></td></tr>
+   
+   <tr><td height="15"></td></tr>
+   
+   <tr><td>
+   <input type="radio" id="radio-satici" name="kargo" value="saticiya-ait" onclick="expose(this)"checked><label id="label-5">Kargo Satıcıya Ait</label>
+   <input type="radio" id="radio-alici" name="kargo" value="aliciya-ait" onclick="expose(this)"><label id="label-6">Kargo Alıcıya Ait</label>
+   </td></tr>
+   
+   <tr><td height="5"></td></tr>
+   
+   <tr id="hidden-1"><td id="row-1">Kargo Ücreti</td></tr>
+   <tr id="hidden-2"><td height="52">
+   <div class="custom-input">
+   <input type="number" id="input-kargo-gizli" style="float:left;">
+   <input type="checkbox" id="check" style="float:left; margin:20px 0 0 0; display:none;">
+   <label for="check" class="on-off"></label>
+   <label id="label-7">KDV Hariç</label>
+   </div></td></tr>
+   <tr id="hidden-2-uyari"><td height="12"><span id="kargo-uyari"></span></td></tr>
+   
+   
+   <tr><td height="10"></td></tr>
+   
+   <tr><td height="52"><input type="button" id="button-1" value="Hesapla" onClick="hesapla()"></td></tr>
+   <tr><td height="52"><input type="button" id="button-2" value="Temizle"></td></tr>
+   
+   </table>
+   </form>
+   </center>
+  </div>
+  <div class="orta-sablon-sag">
+   <div class="telefon" id="telefon">
+    <div class="telefon-yazi">
+    
+     <p id="telefon-baslik">Hesaplama Sonucu</p><br/>
+     
+     <p id="telefon-yazi1">Sonucu görmek için tutar girip <b>"Hesapla"</b> butonuna basın</p><br/>
+     
+     <div class="telefon-yazi2">
+      <p id="telefon-yazi2-sol"></p><p id="telefon-yazi2-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-yazi3">
+      <p id="telefon-yazi3-sol"></p><p id="telefon-yazi3-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-cizgi" id="telefon-cizgi"></div>
+     
+     <div class="telefon-yazi4">
+      <p id="telefon-yazi4-sol"></p><p id="telefon-yazi4-sag"></p>
+     </div>
+    
+    </div>
+   </div>
+   
+   
+   
+   <div class="tabela">
+    <div class="tabela-yazi">Düşük Komisyon Oranlarıyla Daha Fazla Kar Edin!</div>
+    <div class="tabela-button"><input type="button" id="tabela-button" value="Bizimle İletişime Geç!"></div>
+  </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Zemlog(Desi)</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@600&family=Syne:wght@600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<script type="text/javascript">
+function hesapla(){
+var en=document.getElementById("en").value;
+var boy=document.getElementById("boy").value;
+var yukseklik=document.getElementById("yukseklik").value;
+var sonuc=(en*boy*yukseklik)/3000;
+
+document.getElementById("en-uyari").innerHTML="";
+document.getElementById("boy-uyari").innerHTML="";
+document.getElementById("yukseklik-uyari").innerHTML="";
+
+
+if(document.getElementById("en").value=="")
+{document.getElementById("en-uyari").innerHTML="Lütfen ürününüzün enini giriniz";
+document.getElementById("en-uyari").style.color="#ff0000";
+document.getElementById("en-uyari").style.fontSize="12px";
+document.getElementById("en-uyari").style.fontFamily="Poppins', sans-serif;";
+}
+
+if(document.getElementById("boy").value=="")
+{document.getElementById("boy-uyari").innerHTML="Lütfen ürününüzün boyunu giriniz";
+document.getElementById("boy-uyari").style.color="#ff0000";
+document.getElementById("boy-uyari").style.fontSize="12px";
+document.getElementById("boy-uyari").style.fontFamily="Poppins', sans-serif;";
+}
+
+if(document.getElementById("yukseklik").value=="")
+{document.getElementById("yukseklik-uyari").innerHTML="Lütfen ürününüzün yüksekliğini giriniz";
+document.getElementById("yukseklik-uyari").style.color="#ff0000";
+document.getElementById("yukseklik-uyari").style.fontSize="12px";
+document.getElementById("yukseklik-uyari").style.fontFamily="Poppins', sans-serif;";
+}
+
+
+else{
+document.getElementById("telefon-yazi2-sol").innerHTML="Paketin Eni";
+document.getElementById("telefon-yazi2-sag").innerHTML= en;
+
+document.getElementById("telefon-yazi3-sol").innerHTML="Paketin Boyu";
+document.getElementById("telefon-yazi3-sag").innerHTML= boy;
+
+document.getElementById("telefon-yazi4-sol").innerHTML="Paketin Yüksekliği";
+document.getElementById("telefon-yazi4-sag").innerHTML= yukseklik;
+
+document.getElementById("telefon-cizgi").innerHTML='<hr style="border:1px solid #A4A4A4; width:208px;">';
+
+document.getElementById("telefon-yazi5-sol").innerHTML="Desi Sonucu";
+document.getElementById("telefon-yazi5-sag").innerHTML= sonuc.toFixed(2);
+}
+
+}
+
+function temizle(){
+
+document.getElementById("telefon-yazi2-sol").innerHTML="";	
+document.getElementById("telefon-yazi2-sag").innerHTML="";
+
+document.getElementById("telefon-yazi3-sol").innerHTML="";
+document.getElementById("telefon-yazi3-sag").innerHTML="";
+
+document.getElementById("telefon-yazi4-sol").innerHTML="";
+document.getElementById("telefon-yazi4-sag").innerHTML="";
+
+document.getElementById("telefon-cizgi").innerHTML="";
+
+document.getElementById("telefon-yazi5-sol").innerHTML="";
+document.getElementById("telefon-yazi5-sag").innerHTML="";
+	
+	}
+</script>
+<div class="ust">
+ <div class="ust-baslik">Desi Hesaplama Aracı</div>
+ <div class="ust-yazi">Kargo Desi Hesaplama Aracı'nı kullanarak kargolarınızın desisini kolaylıkla hesaplayabilirsiniz.</div>
+</div>
+
+<div class="orta">
+ <div class="orta-sablon">
+  <div class="orta-sablon-sol">
+  <center>
+   <form>
+   <table class="table">
+
+   <tr><td height="24" id="row-1">Paketin Eni (cm)</td></tr>
+   <tr><td height="52"><input type="number" id="en" class="row-2"></td></tr>
+   <tr><td height="12"><span id="en-uyari"></span></td></tr>
+   
+   <tr><td height="10"></td></tr>
+      
+   <tr><td height="24" id="row-1">Paketin Boyu (cm)</td></tr>
+   <tr><td height="52"><input type="number" id="boy" class="row-2"></td></tr>
+   <tr><td height="12"><span id="boy-uyari"></span></td></tr>
+   
+   <tr><td height="10"></td></tr>
+   
+   <tr><td height="24" id="row-1">Paketin Yüksekliği (cm)</td></tr>
+   <tr><td height="52"><input type="number" id="yukseklik" class="row-2"></td></tr>
+   <tr><td height="12"><span id="yukseklik-uyari"></span></td></tr>
+   
+   <tr><td height="10"></td></tr>
+   
+   <tr><td height="52"><input type="button" id="button-1" value="Hesapla" onClick="hesapla()"></td></tr>
+   <tr><td height="52"><button id="button-2" onClick="temizle()"><span class="trash-icon">&#128465;</span> Temizle</button></td></tr>
+   <!--
+   <input type="button" id="button-2" value="Temizle" onClick="temizle()">
+   -->
+   </table>
+   </form>
+   </center>
+  </div>
+  <div class="orta-sablon-sag">
+   <div class="telefon" id="telefon">
+    <div class="telefon-yazi">
+    
+     <p id="telefon-baslik">Hesaplama Sonucu</p><br/>
+     
+     <p id="telefon-yazi1">Sonucu görmek için tutar girip <b>'Hesapla'</b> butonuna basın.</p><br/>
+     
+     <div class="telefon-resim-kutu"><img src="images/kutu1.png" alt="desi"/></div>
+     
+     <div class="telefon-yazi2">
+      <p id="telefon-yazi2-sol"></p><p id="telefon-yazi2-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-yazi3">
+      <p id="telefon-yazi3-sol"></p><p id="telefon-yazi3-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-yazi4">
+      <p id="telefon-yazi4-sol"></p><p id="telefon-yazi4-sag"></p>
+     </div><br/>
+     
+     <div id="telefon-cizgi"></div>
+     
+     <div class="telefon-yazi5">
+      <p id="telefon-yazi5-sol"></p><p id="telefon-yazi5-sag"></p>
+     </div>
+    
+    </div>
+   </div>
+  </div>
+  
+  
+ </div>
+</div>
+
+</body>
+</html>

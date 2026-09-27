@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Zemlog(ETSY)</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@600&family=Syne:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<script type="text/javascript">
+function expose()
+{
+	
+	if(check.checked)
+	{
+		document.getElementById("gizli-1").style="display:block";
+		document.getElementById("gizli-2").style="display:block";
+	}
+	
+	else
+	{
+		document.getElementById("gizli-1").style="display:none";
+		document.getElementById("gizli-2").style="display:none";
+	}
+	
+	
+	
+}
+
+
+
+function hesapla(){
+var fiyat=document.getElementById("fiyat").value;
+var maaliyet=document.getElementById("maaliyet").value;
+var reklam=document.getElementById("reklam").value;
+
+var reklam_sonuc=fiyat*(reklam/100);
+var listing=fiyat*(0.20)/100;
+var transaction=fiyat*(5/100);
+var process=fiyat*(6.5/100)+0.10;
+var sonuc=(fiyat-maaliyet-reklam_sonuc-listing-transaction-process);
+var sonuc_2=(fiyat-maaliyet-listing-transaction-process);
+
+
+document.getElementById("fiyat-uyari").innerHTML="";
+document.getElementById("maaliyet-uyari").innerHTML="";
+
+
+
+if(document.getElementById("fiyat").value=="")
+{document.getElementById("fiyat-uyari").innerHTML="Lütfen fiyat giriniz";
+document.getElementById("fiyat-uyari").style.color="#ff0000";
+document.getElementById("fiyat-uyari").style.fontSize="12px";
+document.getElementById("fiyat-uyari").style.fontFamily="Poppins', sans-serif;";}
+
+if(document.getElementById("maaliyet").value=="")
+{document.getElementById("maaliyet-uyari").innerHTML="Lütfen maaliyet giriniz";
+document.getElementById("maaliyet-uyari").style.color="#ff0000";
+document.getElementById("maaliyet-uyari").style.fontSize="12px";
+document.getElementById("maaliyet-uyari").style.fontFamily="Poppins', sans-serif;";}
+
+
+else{
+	
+	if(check.checked)
+{
+	document.getElementById("telefon-yazi2-sol").innerHTML="Satış Fiyatı";
+	document.getElementById("telefon-yazi2-sag").innerHTML="+$"+fiyat;
+	document.getElementById("telefon-yazi2-sag").style.color="#00ff00";
+	document.getElementById("telefon-yazi2-sag").style.fontFamily="Poppins', sans-serif;";
+
+	document.getElementById("telefon-yazi3-sol").innerHTML="Ürün Maaliyeti";
+	document.getElementById("telefon-yazi3-sag").innerHTML="-$"+maaliyet;
+	document.getElementById("telefon-yazi3-sag").style.color="#ff0000";
+	document.getElementById("telefon-yazi3-sag").style.fontFamily="Poppins', sans-serif;";
+
+	document.getElementById("telefon-yazi4-sol").innerHTML="Reklam Ücreti";
+	document.getElementById("telefon-yazi4-sag").innerHTML="-$"+reklam_sonuc;
+	document.getElementById("telefon-yazi4-sag").style.color="#ff0000";
+	document.getElementById("telefon-yazi4-sag").style.fontFamily="Poppins', sans-serif;";
+
+	document.getElementById("telefon-yazi5-sol").innerHTML="Listeleme Ücreti";
+	document.getElementById("telefon-yazi5-sag").innerHTML="-$"+listing;
+	document.getElementById("telefon-yazi5-sag").style.color="#ff0000";
+	document.getElementById("telefon-yazi5-sag").style.fontFamily="Poppins', sans-serif;";
+
+	document.getElementById("telefon-yazi6-sol").innerHTML="İşlem ücreti";
+	document.getElementById("telefon-yazi6-sag").innerHTML="-$"+transaction;
+	document.getElementById("telefon-yazi6-sag").style.color="#ff0000";
+	document.getElementById("telefon-yazi6-sag").style.fontFamily="Poppins', sans-serif;";
+	
+	document.getElementById("telefon-yazi7-sol").innerHTML="Süreç ücreti";
+	document.getElementById("telefon-yazi7-sag").innerHTML="-$"+process;
+	document.getElementById("telefon-yazi7-sag").style.color="#ff0000";
+	document.getElementById("telefon-yazi7-sag").style.fontFamily="Poppins', sans-serif;";
+
+	document.getElementById("telefon-cizgi").innerHTML = '<hr style="border:1px solid #A4A4A4; width:208px;">';
+
+	document.getElementById("telefon-yazi8-sol").innerHTML="Sonuç";
+	document.getElementById("telefon-yazi8-sag").innerHTML="$"+sonuc.toFixed(2);
+	document.getElementById("telefon-yazi8-sag").style.color="#000000";
+	document.getElementById("telefon-yazi8-sag").style.fontFamily="Poppins', sans-serif;";}
+     
+	 else
+	 {document.getElementById("telefon-yazi2-sol").innerHTML="Satış Fiyatı";
+      document.getElementById("telefon-yazi2-sag").innerHTML="+$"+fiyat;
+	  document.getElementById("telefon-yazi2-sag").style.color="#00ff00";
+	  document.getElementById("telefon-yazi2-sag").style.fontFamily="Poppins', sans-serif;";
+
+	  document.getElementById("telefon-yazi3-sol").innerHTML="Ürün Maaliyeti";
+	  document.getElementById("telefon-yazi3-sag").innerHTML="-$"+maaliyet;
+	  document.getElementById("telefon-yazi3-sag").style.color="#ff0000";
+	  document.getElementById("telefon-yazi3-sag").style.fontFamily="Poppins', sans-serif;";
+
+	  document.getElementById("telefon-yazi4-sol").innerHTML="Listeleme Ücreti";
+	  document.getElementById("telefon-yazi4-sag").innerHTML="-$"+listing;
+	  document.getElementById("telefon-yazi4-sag").style.color="#ff0000";
+	  document.getElementById("telefon-yazi4-sag").style.fontFamily="Poppins', sans-serif;";
+
+	  document.getElementById("telefon-yazi5-sol").innerHTML="İşlem ücreti";
+	  document.getElementById("telefon-yazi5-sag").innerHTML="-$"+transaction;
+	  document.getElementById("telefon-yazi5-sag").style.color="#ff0000";
+	  document.getElementById("telefon-yazi5-sag").style.fontFamily="Poppins', sans-serif;";
+
+	  document.getElementById("telefon-yazi6-sol").innerHTML="Süreç ücreti";
+	  document.getElementById("telefon-yazi6-sag").innerHTML="-$"+process;
+	  document.getElementById("telefon-yazi6-sag").style.color="#ff0000";
+	  document.getElementById("telefon-yazi6-sag").style.fontFamily="Poppins', sans-serif;";
+
+	  document.getElementById("telefon-cizgi").innerHTML = '<hr style="border:1px solid #A4A4A4; width:208px;">';
+
+	  document.getElementById("telefon-yazi8-sol").innerHTML="Sonuç";
+      document.getElementById("telefon-yazi8-sag").innerHTML="$"+sonuc_2.toFixed(2);
+	  document.getElementById("telefon-yazi8-sag").style.color="#000000";
+	  document.getElementById("telefon-yazi8-sag").style.fontFamily="Poppins', sans-serif;";}
+	  
+}
+}
+
+function temizle(){
+
+document.getElementById("telefon-yazi2-sol").innerHTML="";	
+document.getElementById("telefon-yazi2-sag").innerHTML="";
+
+document.getElementById("telefon-yazi3-sol").innerHTML="";
+document.getElementById("telefon-yazi3-sag").innerHTML="";
+
+document.getElementById("telefon-yazi4-sol").innerHTML="";
+document.getElementById("telefon-yazi4-sag").innerHTML="";
+
+document.getElementById("telefon-yazi5-sol").innerHTML="";
+document.getElementById("telefon-yazi5-sag").innerHTML="";
+
+document.getElementById("telefon-yazi6-sol").innerHTML="";
+document.getElementById("telefon-yazi6-sag").innerHTML="";
+
+document.getElementById("telefon-yazi7-sol").innerHTML="";
+document.getElementById("telefon-yazi7-sag").innerHTML="";
+
+document.getElementById("telefon-cizgi").innerHTML="";
+
+document.getElementById("telefon-yazi8-sol").innerHTML="";
+document.getElementById("telefon-yazi8-sag").innerHTML="";
+
+}
+</script>
+<div class="ust">
+ <div class="ust-baslik">ETSY Hesaplama</div>
+ <div class="ust-yazi">ETSY değerlerini en kolay şekilde hesaplayabilmeniz için aşağıdaki tabloyu kullanabilirsiniz.</div>
+</div>
+
+<div class="orta">
+ <div class="orta-sablon">
+  <div class="orta-sablon-sol">
+  <center>
+   <form>
+   <table class="table">
+   <tr><td height="24" class="row-1">Satış Fiyatı</td></tr>
+   <tr><td height="52"><input type="number" id="fiyat" class="row-2" placeholder="$"></td></tr>
+   <tr><td height="12"><span id="fiyat-uyari"></span></td></tr>
+   
+   <tr><td height="10"></td></tr>
+   
+   <tr><td height="24" class="row-1">Maaliyet</td></tr>
+   <tr><td height="52"><input type="number" id="maaliyet" class="row-2" placeholder="$"></td></tr>
+   <tr><td height="12"><span id="maaliyet-uyari"></span></td></tr>
+   
+   <tr><td height="10"></td></tr>
+   
+   <tr><td height="52">
+   <input type="checkbox" id="check" onclick="expose()" style="float:left; margin:20px 0 0 0; display:none;">
+   <label for="check" class="on-off"></label>
+   <label id="label-7">Site Dışı Reklam satışı</label>
+   </td></tr>
+   <tr id="gizli-1"><td height="24" class="row-1">reklam</td></tr>
+   <tr id="gizli-2"><td height="52">
+   <select id="reklam" class="row-2">
+   <option value="12" id="opsiyon-1">%12</option>
+   <option value="15" id="opsiyon-2">%15</option>
+   </select>
+   </td></tr>
+   
+   <tr><td height="10"></td></tr>
+   
+   <tr><td height="52"><input type="button" class="button-1" value="Hesapla" onClick="hesapla()"></td></tr>
+   <tr><td height="52"><button id="button-2" onClick="temizle()"><span class="trash-icon">&#128465;</span> Temizle</button></td></tr>
+   <!--
+   <input type="button" id="button-2" value="Temizle" onClick="temizle()">
+   -->
+   </table>
+   </form>
+   </center>
+  </div>
+  <div class="orta-sablon-sag">
+   <div class="telefon" id="telefon">
+    <div class="telefon-yazi">
+    
+     <p id="telefon-baslik">Hesaplama Sonucu</p><br/>
+     
+     <p id="telefon-yazi1">Sonucu görmek için tutar girip <b>"Hesapla"</b> butonuna basın</p><br/>
+     
+     <div class="telefon-yazi2">
+      <p id="telefon-yazi2-sol"></p><p id="telefon-yazi2-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-yazi3">
+      <p id="telefon-yazi3-sol"></p><p id="telefon-yazi3-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-yazi4">
+      <p id="telefon-yazi4-sol"></p><p id="telefon-yazi4-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-yazi5">
+      <p id="telefon-yazi5-sol"></p><p id="telefon-yazi5-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-yazi6">
+      <p id="telefon-yazi6-sol"></p><p id="telefon-yazi6-sag"></p>
+     </div><br/>
+     
+     <div class="telefon-yazi7">
+      <p id="telefon-yazi7-sol"></p><p id="telefon-yazi7-sag"></p>
+     </div><br/>
+      
+     <div class="telefon-cizgi" id="telefon-cizgi"></div>
+     
+     <div class="telefon-yazi8">
+      <p id="telefon-yazi8-sol"></p><p id="telefon-yazi8-sag"></p> 
+     </div>
+    
+    </div>
+   </div>
+  </div>
+  
+  
+ </div>
+</div>
+
+</body>
+</html>

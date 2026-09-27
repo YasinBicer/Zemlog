@@ -1,0 +1,598 @@
+/***** RESET *****/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var, b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	/*font-size: 100%;
+	vertical-align: baseline;*/
+	
+}
+html, body {height:100%;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;} /
+textarea {overflow:auto;}
+
+/***** RESET *****/
+
+@media screen and (max-width: 1024px) {
+	div.ust-baslik{ width:330px; height:24px; font-size:20px; line-height:24px;}
+	div.ust-yazi{  width:343px; height:30px; font-size:12px; line-height:14.63px;}
+	div.orta-sablon-sag{ margin:0 0 0 20px;}
+}
+
+@media screen and (max-width: 500px) {
+	div.ust-baslik{ width:176px; height:48px; font-size:20px; line-height: 24px}
+	div.ust-yazi{  width:301px; height:24px; font-weight:400; line-height:12.19px }
+	div.orta-sablon{ width:318px; height:1529px; border-radius:20px; margin:0 auto;}
+	div.orta-sablon-sol{ margin:0 0 0 0; padding:0 0 0 0; float:none;}
+	div.orta-sablon-sag{ margin:0 0 0 0; padding:0 0 0 0; float:none;}
+	div.telefon{ margin:0 0 0 0; padding:0 0 0 0; float:none;}
+	div.tabela{ margin:0 0 0 0; padding:0 0 0 0; float:none;}
+	table.table{ margin:20px 80px 0 0}
+}
+
+
+
+
+#row-1{
+font-family: Poppins;
+font-size: 16px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+}
+	
+.row-2 {
+	width:304px;
+	height:52px;
+    border-radius: 10px;
+    border: 1px solid #F66603;
+}
+
+
+.row-2_1 {
+display:block;
+width:70px;
+height:42px;
+background-color:#fff;
+border-radius: 0 10px 10px 0;
+border:1px solid #F66603;
+cursor:pointer;
+margin:-10px 0 0 230px;
+}
+
+
+.row-3{
+	width:122px;
+	height:19px;
+	border-radius:20px;
+	color:#F66603;
+	background:#F6660333;
+    font-family: Poppins;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 0em;
+	text-align:left;
+	padding:5px 0 0 0;
+
+}
+
+#row-3-1{
+display:block;
+width:75px;
+height:15px;
+float:left;
+margin:0 0 0 15px;
+	}
+	
+	
+#row-3-2{
+display:block;
+width:20px;
+height:15px;
+float:left;
+margin:0 0 10px 0;}
+
+
+
+
+
+
+#radio-1{ display:none;}
+#radio-2{ display:none;}
+#radio-3{ display:none;}
+#radio-4{ display:none;}
+
+#label-1{
+display:block;
+width:75px;
+height:42px;
+background-color:#fff;
+border-radius: 10px 0 0 10px;
+border:1px solid #F66603;
+cursor:pointer;
+float:left;
+
+font-family: Poppins;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+padding:10px 0 0 0;
+}
+
+#label-2{
+display:block;
+width:75px;
+height:42px;
+background-color:#fff;
+border-radius: 0 0 0 0;
+border:1px solid #F66603;
+cursor:pointer;
+float:left;
+
+font-family: Poppins;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+padding:10px 0 0 0;
+}
+
+
+#label-3{
+display:block;
+width:75px;
+height:42px;
+background-color:#fff;
+border-radius: 0 0 0 0;
+border:1px solid #F66603;
+cursor:pointer;
+float:left;
+
+font-family: Poppins;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+padding:10px 0 0 0
+}
+
+
+#label-4{
+display:block;
+width:75px;
+height:42px;
+background-color:#fff;
+border-radius: 0 10px 10px 0;
+border:1px solid #F66603;
+cursor:pointer;
+float:left;
+
+font-family: Poppins;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+padding:10px 0 0 0
+}
+
+#radio-1:checked ~ #label-1,
+#radio-2:checked ~ #label-2,
+#radio-3:checked ~ #label-3,
+#radio-4:checked ~ #label-4
+{
+	background:#F6660333;}
+
+input#radio{
+	accent-color:#F66603;
+}
+
+#label-5{
+width:105px;
+height:18px;
+font-family: Poppins;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+}
+
+#label-6{
+width:97px;
+height:18px;
+font-family: Poppins;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+}
+
+
+#button-1{
+width:304px;
+height:52px;
+border-radius:10px;
+border:1px;
+background:#F66603;
+
+font-family: Poppins;
+font-size: 16px;
+font-weight: 600;
+color:#FFFFFF;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+
+}
+
+#button-2{
+width:304px;
+height:52px;
+border-radius:10px;
+border:1px solid #F66603;
+background:#FFF;
+
+font-family: Poppins;
+font-size: 16px;
+font-weight: 600;
+color:#F66603;
+line-height: 24px;
+letter-spacing: 0em;
+text-align:center;
+margin:10px 0 0 0
+}
+
+
+#tabela-button{
+width:209px;
+height: 43px;
+border-radius:10px;
+border:1px solid #FFF;
+
+font-family: Poppins;
+font-size: 16px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+color:#F66603;
+}
+
+
+
+
+#input-alis-gizli{
+	border:1px solid #fff;
+	height:45px;
+    margin:0 0 0 10px;	
+	}
+
+#input-alis-gizli:focus{
+	outline:none;}
+	
+	
+#input-kargo-gizli{
+	border:1px solid #fff;
+	height:45px;
+    margin:0 0 0 10px;	
+	}
+
+#input-kargo-gizli:focus{
+	outline:none;}
+	
+	
+	
+	
+
+#label-7{
+	display:block;
+	width:52px;
+	height:16px;
+	float:left;
+	margin:20px 0 0 10px;
+	
+	color:#F66603;
+	font-size:10px;
+	font-weight:600;
+	line-height:15px;
+	font-family: 'Poppins', sans-serif;
+
+	}
+
+.on-off{
+	display:block;
+	float:left;
+	background:#F6660333;
+	width:48px;
+	height:24px;
+	border-radius:48px;
+	cursor:pointer;
+	margin:15px 0 0 0;
+	position:relative;
+	transition:0.2s;
+	}
+	
+.on-off::before{
+	position:absolute;
+	content:'';
+	background:#FFF;
+	width:20px;
+	height:20px;
+	border-radius:25px;
+	margin:2px;
+	transition:0.2s;
+	}
+
+input:checked + .on-off{
+	background:#F66603;
+	}
+	
+input:checked + .on-off::before{
+	transform: translateX(24px)
+	}
+
+
+
+.ust{
+	width:100%; 
+	height:175px;}
+
+.ust-baslik{
+width: 519px;
+height: 44px;
+font-size: 37px;
+font-weight: 600;
+line-height: 44px;
+letter-spacing: 0em;
+text-align:center;
+margin:50px auto 20px auto;
+}
+
+.ust-yazi{
+width: 818px;
+height: 48px;
+font-size: 20px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+margin: 0 auto;
+}
+
+
+.orta{
+	width:100%; 
+	height:850px;}
+	
+	
+.orta-sablon{
+width:900px;
+height:776px;
+border-radius:20px;
+margin:50px auto 0 auto;
+box-shadow:0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.orta-sablon-sol{
+	width:400px;
+	height:776px;
+	float:left;}
+	
+.table{ margin:20px 0 0 0}
+
+.orta-sablon-sag{
+	width:400px;
+	height:776px;
+	float:left;
+	margin:0 0 0 100px;
+	}
+	
+.telefon{
+	width:293px;
+	height:576px;
+	margin:0 auto;
+	background:url(images/ekran%201.png);
+	padding:0 0 0 0;
+	text-align:center;
+	position:absolute;
+	z-index:2;
+	}
+	
+.telefon-yazi{
+	width:225px;
+	height:250px;
+	margin:75px 0 0 37.5px;
+	position:absolute;
+	z-index:1;
+}
+
+
+	
+#telefon-baslik{
+	display:block;
+	width:125px;
+    height:18px;
+	font-size:12px;
+	font-weight:600;
+	line-height:18px;
+	color:#194BC9;
+	
+	}
+	
+	
+#telefon-yazi1{
+	display:block;
+	width:200px;
+    height:36px;
+	color:#080F22;
+	
+
+font-family: Poppins;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+
+	}
+	
+
+
+.telefon-yazi2{
+	width:225px;
+    height:18px;
+	}
+	
+	
+#telefon-yazi2-sol{
+	display:block;
+	height:18px;
+	width:100px;
+	float:left;
+
+font-size: 12px;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0em;
+text-align:left;
+}
+
+#telefon-yazi2-sag{
+	display:block;
+	height:18px;
+	width:120px;
+	float:right;
+
+font-size: 12px;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0em;
+text-align:right;
+}
+
+
+.telefon-yazi3{
+	width:225px;
+    height:18px;
+	
+	}
+	
+	
+#telefon-yazi3-sol{
+	display:block;
+	height:18px;
+	width:100px;
+	float:left;
+	
+font-size: 12px;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0em;
+text-align:left;
+	}
+
+
+#telefon-yazi3-sag{
+	display:block;
+	height:18px;
+	width:120px;
+	float:right;
+
+font-size: 12px;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0em;
+text-align:right;
+	}
+
+
+
+
+.telefon-yazi4{
+	width:225px;
+    height:18px;
+	
+	}
+	
+#telefon-yazi4-sol{
+	display:block;
+	height:18px;
+	width:100px;
+	float:left;
+
+font-size: 12px;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0em;
+text-align:left;
+	}
+
+
+#telefon-yazi4-sag{
+	display:block;
+	height:18px;
+	width:120px;
+	float:right;
+
+font-size: 12px;
+font-weight: 600;
+line-height: 18px;
+letter-spacing: 0em;
+text-align:right;
+	}
+
+
+
+.tabela{
+width: 287px;
+height:146px;
+border-radius:10px;
+background: #F66603;
+margin:600px 0 0 5px;
+}
+
+.tabela-yazi{
+width:232px;
+height:28px;
+margin:0 auto;
+padding:20px 0 0 0;
+
+font-family: Poppins;
+font-size: 16px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+color:#FFFFFF
+
+	}
+	
+.tabela-button{
+width:209px;
+height:43px;
+margin:30px auto 0 auto;
+}
+
+
+.custom-input{
+width:304px;
+height:52px;
+border-radius:10px;
+border:1px solid #F66603;}
+
+
+
